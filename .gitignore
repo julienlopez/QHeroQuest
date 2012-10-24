@@ -10,3 +10,8 @@
 *.lai
 *.la
 *.a
+
+Makefile
+server/Makefile
+client/Makefile
+QHeroQuest/Makefile
