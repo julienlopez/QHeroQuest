@@ -12,8 +12,10 @@ INCLUDEPATH += $$QQHEROQUEST_INCLUDE
 LIBS += -L$$QQHEROQUEST_BIN
 LIBS += -lQHeroQuest
 
-HEADERS +=
+HEADERS += \
+    client.hpp
 
 SOURCES += \
-    main.cpp
+    main.cpp \
+    client.cpp
 

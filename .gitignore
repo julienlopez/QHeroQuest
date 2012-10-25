@@ -11,7 +11,7 @@
 *.la
 *.a
 
+*.pro.user
+bin/*
 Makefile
-server/Makefile
-client/Makefile
-QHeroQuest/Makefile
+*/Makefile*
