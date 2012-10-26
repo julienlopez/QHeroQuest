@@ -4,11 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 include(../QHeroQuest.pri)
 
-TARGET = $$QHEROQUEST_BIN/QHeroQuestClient
+TARGET = QHeroQuestClient
 TEMPLATE = app
 
 OBJECTS_DIR = $$QHEROQUEST_OBJ
@@ -19,8 +19,9 @@ LIBS += -L$$QHEROQUEST_BIN
 LIBS += -lQHeroQuest
 
 SOURCES += main.cpp\
-        mainwindow.cpp 
+    ui/mainwindow.cpp \
+    ui/connexiondialog.cpp
 
 HEADERS  += \
-    mainwindow.hpp 
-
+    ui/mainwindow.hpp \
+    ui/connexiondialog.hpp
