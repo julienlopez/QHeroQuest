@@ -10,7 +10,8 @@ MOC_DIR = $$QHEROQUEST_OBJ
 
 INCLUDEPATH += .
 
-SOURCES += utils/json.cpp 
+SOURCES += utils/json.cpp \ 
+    message/message.cpp
 
 HEADERS  += \
     utils/json.hpp \
@@ -18,4 +19,4 @@ HEADERS  += \
     utils/factory.hpp \
     utils/defaultfactoryerrorpolicy.hpp \
     utils/traits/parametertrait.hpp \
-
+    message/message.hpp
