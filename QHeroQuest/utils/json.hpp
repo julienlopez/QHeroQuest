@@ -4,6 +4,8 @@
 #include <QString>
 #include <QVariant>
 
+namespace Utils {
+
 class JSon
 {
 public:
@@ -16,5 +18,7 @@ public:
     static QString toJson(const QString& str);
     static QString toJson(int i);
 };
+
+}
 
 #endif // JSON_H

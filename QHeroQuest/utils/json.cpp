@@ -1,5 +1,7 @@
 #include "json.hpp"
 
+namespace Utils {
+
 JSon::JSon()
 {
 
@@ -61,4 +63,6 @@ QString JSon::toJson(const QString& str)
 QString JSon::toJson(int i)
 {
     return QString::number(i);
+}
+
 }
