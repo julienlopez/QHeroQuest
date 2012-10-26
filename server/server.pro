@@ -1,21 +1,23 @@
 include(../QHeroQuest.pri)
 
-TARGET = $$QHEROQUEST_BIN/tests
+TARGET = QHeroQuestServer
 
 QT -= gui
+QT += network
 TEMPLATE = app
 CONFIG   += console
 CONFIG   -= app_bundle
 
 INCLUDEPATH += $$QQHEROQUEST_INCLUDE
 
-LIBS += -L$$QQHEROQUEST_BIN
+LIBS += -L$$QHEROQUEST_BIN
 LIBS += -lQHeroQuest
 
 HEADERS += \
-    client.hpp
+    client.hpp \
+    messagehandler.hpp
 
 SOURCES += \
     main.cpp \
-    client.cpp
-
+    client.cpp \
+    messagehandler.cpp
