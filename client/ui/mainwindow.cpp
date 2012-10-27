@@ -24,8 +24,6 @@ UI::MainWindow::MainWindow(QWidget *parent)
     connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(erreurSocket(QAbstractSocket::SocketError)));
     connect(this, SIGNAL(messageRecu(Message::Message*)), this, SLOT(handleMessage(Message::Message*)));
 
-    setCentralWidget(new QLabel(tr("Connexion au serveur...")));
-
     chooseConnexion();
 }
 
