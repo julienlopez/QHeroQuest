@@ -20,8 +20,12 @@ LIBS += -lQHeroQuest
 
 SOURCES += main.cpp\
     ui/mainwindow.cpp \
-    ui/connexiondialog.cpp
+    ui/connexiondialog.cpp \
+    ui/regularcommandpannel.cpp \
+    ui/sorcerecommandpannel.cpp
 
 HEADERS  += \
     ui/mainwindow.hpp \
-    ui/connexiondialog.hpp
+    ui/connexiondialog.hpp \
+    ui/regularcommandpannel.hpp \
+    ui/sorcerecommandpannel.hpp
