@@ -16,3 +16,4 @@ bin/*
 Makefile
 */Makefile*
 obj/*
+*/object_script.*

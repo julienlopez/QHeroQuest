@@ -1,5 +1,6 @@
 #include "mainwindow.hpp"
-#include"connexiondialog.hpp"
+#include "connexiondialog.hpp"
+#include "localserverconnexion.hpp"
 
 #include <Message/Message>
 
@@ -14,7 +15,7 @@
 #include <QDebug>
 
 UI::MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), tailleMessage(0)
+    : QMainWindow(parent), tailleMessage(0), m_localServerConnexion(0)
 {
     showMaximized();
     socket = new QTcpSocket(this);
@@ -133,7 +134,5 @@ void UI::MainWindow::chooseConnexion() {
     qDebug() << adr;
     if(adr.isNull()) return;
     socket->connectToHost(adr, 50885);
-    if(p.second) {
-
-    }
+    if(p.second) m_localServerConnexion = new LocalServerConnexion(this);
 }

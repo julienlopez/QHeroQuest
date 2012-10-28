@@ -6,6 +6,8 @@
 #include <QMainWindow>
 #include <QAbstractSocket>
 
+class LocalServerConnexion;
+
 class QTcpSocket;
 
 namespace UI {
@@ -24,6 +26,7 @@ protected:
 private:
     quint16 tailleMessage;
     QTcpSocket* socket;
+    LocalServerConnexion* m_localServerConnexion;
 
 private slots:
     void send(const Message::Message& message);

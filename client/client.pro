@@ -22,10 +22,12 @@ SOURCES += main.cpp\
     ui/mainwindow.cpp \
     ui/connexiondialog.cpp \
     ui/regularcommandpannel.cpp \
-    ui/sorcerecommandpannel.cpp
+    ui/sorcerecommandpannel.cpp \
+    localserverconnexion.cpp
 
 HEADERS  += \
     ui/mainwindow.hpp \
     ui/connexiondialog.hpp \
     ui/regularcommandpannel.hpp \
-    ui/sorcerecommandpannel.hpp
+    ui/sorcerecommandpannel.hpp \
+    localserverconnexion.hpp
