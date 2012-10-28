@@ -10,7 +10,7 @@
 namespace UI {
 
 ConnexionDialog::ConnexionDialog(QWidget *parent) :
-    QDialog(parent)
+    QDialog(parent), m_localserver(false)
 {
     for(quint8 i = 0; i < 4; i++) m_spins[i] = 0;
     setModal(true);
@@ -32,12 +32,17 @@ const QHostAddress& ConnexionDialog::address() const
     return m_address;
 }
 
-QHostAddress ConnexionDialog::promptConnexion(QWidget* parent)
+bool ConnexionDialog::localServer() const
+{
+    return m_localserver;
+}
+
+std::pair<QHostAddress, bool> ConnexionDialog::promptConnexion(QWidget* parent)
 {
     ConnexionDialog dialog(parent);
     int res = dialog.exec();
-    if(res == QDialog::Rejected) return QHostAddress();
-    return dialog.address();
+    if(res == QDialog::Rejected) return std::make_pair(QHostAddress(), false);
+    return std::make_pair(dialog.address(), dialog.localServer());
 }
 
 QWidget* ConnexionDialog::createConnexionToHostGroupBox()
@@ -80,8 +85,6 @@ QWidget* ConnexionDialog::createLocalServerGroupBox()
     return gb;
 }
 
-#include <QDebug>
-
 void ConnexionDialog::onToHostClick()
 {
     QString adr;
@@ -89,14 +92,15 @@ void ConnexionDialog::onToHostClick()
         adr += QString::number(m_spins[i]->value());
         if(i < 3) adr += ".";
     }
-    qDebug() << adr;
     m_address = QHostAddress(adr);
+    m_localserver = false;
     accept();
 }
 
 void ConnexionDialog::onLocalClick()
 {
     m_address = QHostAddress::LocalHost;
+    m_localserver = true;
     accept();
 }
 

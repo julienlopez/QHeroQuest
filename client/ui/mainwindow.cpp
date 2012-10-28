@@ -128,8 +128,12 @@ void UI::MainWindow::handleMessage(Message::Message* message)
 }
 
 void UI::MainWindow::chooseConnexion() {
-    QHostAddress adr = ConnexionDialog::promptConnexion(this);
+    std::pair<QHostAddress, bool> p = ConnexionDialog::promptConnexion(this);
+    QHostAddress adr = p.first;
     qDebug() << adr;
-    if(!adr.isNull())
-        socket->connectToHost(adr, 50885);
+    if(adr.isNull()) return;
+    socket->connectToHost(adr, 50885);
+    if(p.second) {
+
+    }
 }
